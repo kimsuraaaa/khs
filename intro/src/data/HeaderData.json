@@ -1,0 +1,14 @@
+[
+  {
+    "link": "/Intro",
+    "menuName": "intro"
+  },
+  {
+    "link": "/Interaction",
+    "menuName": "interaction"
+  },
+  {
+    "link": "/MBTI",
+    "menuName": "mbti"
+  }
+]
