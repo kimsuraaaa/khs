@@ -1,14 +1,18 @@
 [
   {
-    "link": "/Intro",
+    "link": "/intro",
     "menuName": "intro"
   },
   {
-    "link": "/Interaction",
+    "link": "/interaction",
     "menuName": "interaction"
   },
   {
-    "link": "/MBTI",
+    "link": "/mbti",
     "menuName": "mbti"
+  },
+  {
+    "link": "/theory",
+    "menuName": "Theory"
   }
 ]
