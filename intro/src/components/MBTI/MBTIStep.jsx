@@ -37,9 +37,10 @@ export default function MBTIStep (props) {
 
     return (
         <>
-            <div className="aptitude-col">
+            <section className="aptitude-col">
                 <div className="inner-col">
                     <div className="step-box">
+                        <div className="step-progress"><span></span></div>
                         {AptitudeTestData &&
                             AptitudeTestData.filter((item, index) => index === step).map((item, index) =>
                                 <dl key={index}>
@@ -59,8 +60,7 @@ export default function MBTIStep (props) {
                         }
                     </div>
                 </div>
-            </div>
-            <div className="step-progress"><span></span></div>
+            </section>
         </>
     )
 }

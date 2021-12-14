@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function MBTIStart (props) {
     const pageMoveStep = () => {
@@ -7,21 +7,26 @@ export default function MBTIStart (props) {
             props.getPageType('step');
         }, 1500);
     }
+
+    useEffect(() => {
+        document.querySelector('.aptitude-col').classList.add('active');
+    }, []);
+
     return (
         <>
-            <div className="aptitude-col">
+            <section className="aptitude-col start">
                 <div className="inner-col">
                     <div className="begin-box">
                         <dl>
                             <dt><span></span>1분 MBTI</dt>
                             <dd>
-                                <p>포트폴리오 용도로 만들어진<br/>테스트 페이지 입니다.</p>
-                                <button type="button" onClick={pageMoveStep}>시작하기</button>
+                                <p>4문항만 답해주시면 됩니다<br/>한번 더 버튼을 눌러주세요</p>
+                                <button type="button" onClick={pageMoveStep}>시작!</button>
                             </dd>
                         </dl>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }

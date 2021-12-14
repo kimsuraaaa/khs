@@ -1,7 +1,7 @@
 [
   {
-    "link": "/intro",
-    "menuName": "intro"
+    "link": "/",
+    "menuName": "처음으로"
   },
   {
     "link": "/interaction",
