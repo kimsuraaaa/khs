@@ -20,7 +20,7 @@ import img_14 from '../../assets/images/intro/img_ESFJ.png';
 import img_15 from '../../assets/images/intro/img_ISTJ.png';
 import img_16 from '../../assets/images/intro/img_ESTJ.png';
 
-export default function Begin () {
+export default function Begin() {
 	let motionTimer = '';
 	let delayCheck = false;
 
@@ -91,7 +91,7 @@ export default function Begin () {
 		}
 	];
 
-    let userName = (common.getCookie('userName') === '' || common.getCookie('userName') === null) ? '방문자' : common.getCookie('userName');
+	let userName = (common.getCookie('userName') === '' || common.getCookie('userName') === null) ? '방문자' : common.getCookie('userName');
 
 	const introMotion = (sec) => {
 		let introItem = document.querySelectorAll('.intro-item');
@@ -99,17 +99,17 @@ export default function Begin () {
 		let i = 0;
 		introItem[i].style.display = 'block';
 		beginCol.style.backgroundColor = introItem[i].style.color;
-		i=1;
+		i = 1;
 
-		motionTimer = setInterval(function() {
-			if(i < introItem.length){
-				introItem[i-1].style.opacity = 0;
+		motionTimer = setInterval(function () {
+			if (i < introItem.length) {
+				introItem[i - 1].style.opacity = 0;
 				introItem[i].style.opacity = 1;
 				introItem[i].querySelector('img').style.width = '80%';
 				beginCol.style.backgroundColor = introItem[i].style.color;
 				i++;
-			} else if(i == introItem.length){
-				if(i > 0) introItem[i-1].style.opacity = 0;
+			} else if (i == introItem.length) {
+				if (i > 0) introItem[i - 1].style.opacity = 0;
 				beginCol.classList.add('end-motion');
 			} else {
 				clearInterval(motionTimer);
@@ -119,15 +119,15 @@ export default function Begin () {
 
 	const application = () => {
 		let beginCol = document.querySelector('.begin-col');
-		if(delayCheck) {
+		if (delayCheck) {
 			alert('잠시 후에 시도해 주세요');
 		} else {
 			delayCheck = true;
-            beginCol.classList.add('motion-last');
-            setTimeout(function() {
-                delayCheck = false;
-                window.location.href = '/mbti';
-            }, 1000);
+			beginCol.classList.add('motion-last');
+			setTimeout(function () {
+				delayCheck = false;
+				window.location.href = '/khs/mbti';
+			}, 1000);
 		}
 	}
 
@@ -136,26 +136,26 @@ export default function Begin () {
 		return () => {
 			clearInterval(motionTimer);
 		}
-	},[])
+	}, [])
 
 	return (
 		<>
-            <section className="begin-col">
-                <ul>
-                    {introContentList.map((item, idx) =>
-                        <li key={idx} style={{color: item.colorCode}} className="intro-item">
-                            <img src={item.imageURL} alt="" />
-                        </li>
-                    )}
-                </ul>
-                <div className="last-motion">
-                    <div className="last-inner">
-                        <p>안녕하세요, <span className="user-name">{userName}</span><br/>당신에 좀더 알고 싶어요<br/>아래 버튼을 눌러주세요</p>
-                        <span className="last-item"></span>
-                        <button type="button" onClick={application}>시작</button>
-                    </div>
-                </div>
-            </section>
-        </>
+			<section className="begin-col">
+				<ul>
+					{introContentList.map((item, idx) =>
+						<li key={idx} style={{ color: item.colorCode }} className="intro-item">
+							<img src={item.imageURL} alt="" />
+						</li>
+					)}
+				</ul>
+				<div className="last-motion">
+					<div className="last-inner">
+						<p>안녕하세요, <span className="user-name">{userName}</span><br />당신에 좀더 알고 싶어요<br />아래 버튼을 눌러주세요</p>
+						<span className="last-item"></span>
+						<button type="button" onClick={application}>시작</button>
+					</div>
+				</div>
+			</section>
+		</>
 	);
 };
