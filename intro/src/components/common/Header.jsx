@@ -38,7 +38,6 @@ export default function Header() {
 
     window.addEventListener('scroll', handleScroll);
     document.getElementById('mbti').classList.add(mbti);
-    // document.getElementById('mbtiType').innerText = mbti;
     document.getElementById('name').innerText = name;
 
     return () => {
@@ -67,7 +66,7 @@ export default function Header() {
       </header>
       <section className="profile-card">
         <strong id="mbti"></strong>
-        <span>{mbtiInfo[0].subTitle}<br /><em id="name"></em>님</span>
+        <span>{mbtiInfo[0].subTitle}<br /><em id="name"></em>님<br />방문 감사합니다</span>
         <button type="button" onClick={reSetIntro}>다시 설정하기</button>
       </section>
     </>

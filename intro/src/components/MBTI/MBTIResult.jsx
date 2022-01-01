@@ -1,8 +1,8 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect } from 'react';
 import * as common from "../../js/common";
 import AptitudeResultData from '../../data/QuizStepResultData.json';
 
-export default function MBTIResult (props, resultList) {
+export default function MBTIResult(props, resultList) {
     const [filterResult, setFilterResult] = useState('');
 
     const resultView = (type) => {
@@ -16,7 +16,7 @@ export default function MBTIResult (props, resultList) {
 
     const moveMain = () => {
         common.setCookie('mbti', document.getElementById('mbtiType').innerText);
-        window.location.href = '/main';
+        window.location.href = '/khs/main';
     }
 
     useEffect(() => {
@@ -32,19 +32,19 @@ export default function MBTIResult (props, resultList) {
                     </div>
                     {AptitudeResultData &&
                         AptitudeResultData.filter(item => item.resultType === filterResult).map((item, index) =>
-                        <div className="result-box" key={index}>
-                            <dl>
-                                <dt className={item.resultType}><strong id="mbtiType">{item.resultType}</strong>{item.subTitle}</dt>
-                                <dd>
-                                    <p className="result-content">
-                                        {item.resultContent}
-                                    </p>
-                                    <button type="button" onClick={moveMain}>완료</button>
-                                    <span>* 이미지 및 설문 정보 출처 : www.16personalities.com</span>
-                                    <button type="button" className="btn-text" onClick={reStart}>다시하기</button>
-                                </dd>
-                            </dl>
-                        </div>
+                            <div className="result-box" key={index}>
+                                <dl>
+                                    <dt className={item.resultType}><strong id="mbtiType">{item.resultType}</strong>{item.subTitle}</dt>
+                                    <dd>
+                                        <p className="result-content">
+                                            {item.resultContent}
+                                        </p>
+                                        <button type="button" onClick={moveMain}>완료</button>
+                                        <span>* 이미지 및 설문 정보 출처 : www.16personalities.com</span>
+                                        <button type="button" className="btn-text" onClick={reStart}>다시하기</button>
+                                    </dd>
+                                </dl>
+                            </div>
                         )
                     }
                 </div>

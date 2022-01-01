@@ -14,7 +14,7 @@ export default function KhsRouter() {
   return (
     <>
       <Switch>
-        <Route path="/" exact={true} component={Intro} />
+        <Route path="/khs" exact={true} component={Intro} />
         <Route path="/khs/begin" component={Begin} />
         <Route path="/khs/mbti" component={MBTI} />
         <Route path="/khs/main" component={Main} />
