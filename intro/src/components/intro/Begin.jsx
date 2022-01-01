@@ -126,7 +126,7 @@ export default function Begin() {
 			beginCol.classList.add('motion-last');
 			setTimeout(function () {
 				delayCheck = false;
-				window.location.href = '/khs/mbti';
+				window.location.href = '/mbti';
 			}, 1000);
 		}
 	}

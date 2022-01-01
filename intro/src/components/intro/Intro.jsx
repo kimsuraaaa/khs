@@ -34,7 +34,7 @@ export default function Intro() {
             setTimeout(function () {
                 delayCheck = false;
                 common.setCookie('userName', userName);
-                window.location.href = '/khs/begin';
+                window.location.href = '/begin';
             }, 1000);
         }
     }
@@ -50,7 +50,7 @@ export default function Intro() {
     }
 
     const skipIntro = () => {
-        (loginCheck) ? window.location.href = '/khs/main' : alert('방문 이력이 없어요ㅠㅠ');
+        (loginCheck) ? window.location.href = '/main' : alert('방문 이력이 없어요ㅠㅠ');
     }
 
     useEffect(() => {
