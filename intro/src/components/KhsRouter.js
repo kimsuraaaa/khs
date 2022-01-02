@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Route, Switch } from 'react-router';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Intro from './intro/Intro';
 import MBTI from './MBTI/MBTIMain';
 import Interaction from './interaction/ScrollMotion';
@@ -9,9 +9,6 @@ import TheoryDetail from './Theory/TheoryDetail';
 import NotFoundPage from './common/NotFoundPage';
 import Begin from './intro/Begin';
 import Main from './main/Main';
-import { BrowserRouter } from 'react-router-dom';
-
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 export default function KhsRouter() {
   return (
