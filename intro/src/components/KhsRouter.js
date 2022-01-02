@@ -16,7 +16,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 export default function KhsRouter() {
   return (
     <>
-      <Router>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/" exact={true} component={Intro} />
           <Route path="/begin" component={Begin} />
@@ -29,7 +29,7 @@ export default function KhsRouter() {
           <Route path="/theoryDetail" component={TheoryDetail} />
           <Route path='*' component={NotFoundPage} />
         </Switch>
-      </Router>
+      </BrowserRouter>
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
         
         <Route path="/" exact={true} component={Intro} />
