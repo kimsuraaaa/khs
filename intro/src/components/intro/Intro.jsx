@@ -34,7 +34,7 @@ export default function Intro() {
             setTimeout(function () {
                 delayCheck = false;
                 common.setCookie('userName', userName);
-                window.location.href = '/begin';
+                window.location.href = '/#/begin';
             }, 1000);
         }
     }

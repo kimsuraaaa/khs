@@ -49,7 +49,7 @@ export default function Header() {
     <>
       <header className={isActive ? "active" : null}>
         <div className="header-box">
-          <h1><a href="/main"><em>K</em><span>IM</span><em>H</em><span>YUN</span><em>S</em><span>U</span></a></h1>
+          <h1><a href="/#/main"><em>K</em><span>IM</span><em>H</em><span>YUN</span><em>S</em><span>U</span></a></h1>
           <nav>
             <ul>
               {HeaderData &&
