@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/khs/static/css/main.65d48142.chunk.css",
-    "main.js": "/khs/static/js/main.0622c038.chunk.js",
-    "main.js.map": "/khs/static/js/main.0622c038.chunk.js.map",
+    "main.css": "/khs/static/css/main.47471514.chunk.css",
+    "main.js": "/khs/static/js/main.922310d8.chunk.js",
+    "main.js.map": "/khs/static/js/main.922310d8.chunk.js.map",
     "runtime-main.js": "/khs/static/js/runtime-main.2935c5ef.js",
     "runtime-main.js.map": "/khs/static/js/runtime-main.2935c5ef.js.map",
     "static/js/2.1a00e065.chunk.js": "/khs/static/js/2.1a00e065.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.088f759d.chunk.js": "/khs/static/js/3.088f759d.chunk.js",
     "static/js/3.088f759d.chunk.js.map": "/khs/static/js/3.088f759d.chunk.js.map",
     "index.html": "/khs/index.html",
-    "static/css/main.65d48142.chunk.css.map": "/khs/static/css/main.65d48142.chunk.css.map",
+    "static/css/main.47471514.chunk.css.map": "/khs/static/css/main.47471514.chunk.css.map",
     "static/js/2.1a00e065.chunk.js.LICENSE.txt": "/khs/static/js/2.1a00e065.chunk.js.LICENSE.txt",
     "static/media/interaction.css": "/khs/static/media/img_submain_title.69c54a7d.png",
     "static/media/yta.scss": "/khs/static/media/bg_main_star_s.e59f0dcc.png",
@@ -43,9 +43,11 @@
     "static/media/img_expectation_comment.fb91a945.png": "/khs/static/media/img_expectation_comment.fb91a945.png",
     "static/media/img_nevergiveup_title.d2c97df2.png": "/khs/static/media/img_nevergiveup_title.d2c97df2.png",
     "static/media/img_npmpackage.103c413a.png": "/khs/static/media/img_npmpackage.103c413a.png",
+    "static/media/img_spooner.524280f1.png": "/khs/static/media/img_spooner.524280f1.png",
     "static/media/img_submain.4fc3da49.png": "/khs/static/media/img_submain.4fc3da49.png",
     "static/media/img_target_title.f168a0a8.png": "/khs/static/media/img_target_title.f168a0a8.png",
     "static/media/img_ticketing.466c448a.jpg": "/khs/static/media/img_ticketing.466c448a.jpg",
+    "static/media/img_ticketing.6e4dec35.png": "/khs/static/media/img_ticketing.6e4dec35.png",
     "static/media/img_ynd_easter_egg.578de0b9.png": "/khs/static/media/img_ynd_easter_egg.578de0b9.png",
     "static/media/img_ynd_intro.82b689fb.jpg": "/khs/static/media/img_ynd_intro.82b689fb.jpg",
     "static/media/media_riding.10b22ab0.mp4": "/khs/static/media/media_riding.10b22ab0.mp4",
@@ -54,7 +56,7 @@
   "entrypoints": [
     "static/js/runtime-main.2935c5ef.js",
     "static/js/2.1a00e065.chunk.js",
-    "static/css/main.65d48142.chunk.css",
-    "static/js/main.0622c038.chunk.js"
+    "static/css/main.47471514.chunk.css",
+    "static/js/main.922310d8.chunk.js"
   ]
 }
