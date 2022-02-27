@@ -1,18 +1,27 @@
 [
   {
-    "link": "/",
-    "menuName": "처음으로"
+    "linkType": "scroll",
+    "tagName": ".hello-col",
+    "menuName": "intro"
   },
   {
-    "link": "/interaction",
-    "menuName": "interaction"
+    "linkType": "scroll",
+    "tagName": ".skill-col",
+    "menuName": "skill"
   },
   {
-    "link": "/mbti",
-    "menuName": "mbti"
+    "linkType": "scroll",
+    "tagName": ".motion-col",
+    "menuName": "motion"
   },
   {
-    "link": "/theory",
-    "menuName": "Theory"
+    "linkType": "scroll",
+    "tagName": ".front-col",
+    "menuName": "front"
+  },
+  {
+    "linkType": "scroll",
+    "tagName": ".contact-col",
+    "menuName": "contact"
   }
 ]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import Intro from './intro/Intro';
 import MBTI from './MBTI/MBTIMain';
 import Interaction from './interaction/ScrollMotion';
@@ -9,11 +9,12 @@ import TheoryDetail from './Theory/TheoryDetail';
 import NotFoundPage from './common/NotFoundPage';
 import Begin from './intro/Begin';
 import Main from './main/Main';
+import EndingCredit from './portfolio/endingCredit/EndingCredit';
 
 export default function KhsRouter() {
   return (
     <>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename="/khs/#">
         <Switch>
           <Route path="/" exact={true} component={Intro} />
           <Route path="/begin" component={Begin} />
@@ -24,9 +25,13 @@ export default function KhsRouter() {
           <Route path="/interaction" component={Interaction} />
           <Route path="/theory" component={TheoryList} />
           <Route path="/theoryDetail" component={TheoryDetail} />
+
+
+          <Route path="/portfolio/endingCredit" component={EndingCredit} />
+
           <Route path='*' component={NotFoundPage} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}>
         
         <Route path="/" exact={true} component={Intro} />

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import * as common from "../../js/common";
+import * as common from '../../js/common';
 import HeaderData from '../../data/HeaderData.json';
 import MbtiData from '../../data/QuizStepResultData.json';
+import hsPackage from 'hsmotion';
 
 export default function Header() {
   const [isActive, setActive] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const ToggleClass = () => {
     setActive(!isActive);
-  }
+  };
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY || document.documentElement.scollTop;
@@ -18,21 +19,28 @@ export default function Header() {
     } else {
       document.getElementById('root').classList.remove('header-fixed');
     }
-  }
+  };
 
   const reSetIntro = () => {
     common.deleteCookie('userName');
     common.deleteCookie('mbti');
-    window.location.href = '/';
-  }
+    window.location.href = '/khs/#/';
+  };
 
-  const mbtiInfo = MbtiData && MbtiData.filter((list) => list.resultType === common.getCookie('mbti'));
+  const mbtiInfo =
+    MbtiData &&
+    MbtiData.filter((list) => list.resultType === common.getCookie('mbti'));
 
   useEffect(() => {
     let mbti = common.getCookie('mbti');
     let name = common.getCookie('userName');
 
-    if (mbti === '' || name === '' || mbti === undefined || name === undefined) {
+    if (
+      mbti === '' ||
+      name === '' ||
+      mbti === undefined ||
+      name === undefined
+    ) {
       reSetIntro();
     }
 
@@ -42,23 +50,45 @@ export default function Header() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-    }
+    };
   }, []);
 
   return (
     <>
-      <header className={isActive ? "active" : null}>
+      <header className={isActive ? 'active' : null}>
         <div className="header-box">
-          <h1><a href="/main"><em>K</em><span>IM</span><em>H</em><span>YUN</span><em>S</em><span>U</span></a></h1>
+          <h1>
+            <a href="/khs/#/main">
+              <em>K</em>
+              <span>IM</span>
+              <em>H</em>
+              <span>YUN</span>
+              <em>S</em>
+              <span>U</span>
+            </a>
+          </h1>
           <nav>
             <ul>
               {HeaderData &&
                 HeaderData.map((item, index) => {
                   return (
                     <li key={index}>
-                      <a href={item.link}>{item.menuName}</a>
+                      {item.linkType === 'link' ? (
+                        <a href={item.link}>{item.menuName}</a>
+                      ) : item.linkType === 'scroll' ? (
+                        <button
+                          type="button"
+                          onClick={() => hsPackage.scrollMove(item.tagName, 15)}
+                        >
+                          {item.menuName}
+                        </button>
+                      ) : item.linkType === 'blank' ? (
+                        <a href={item.link} target="_blank">
+                          {item.menuName}
+                        </a>
+                      ) : null}
                     </li>
-                  )
+                  );
                 })}
             </ul>
           </nav>
@@ -66,9 +96,16 @@ export default function Header() {
       </header>
       <section className="profile-card">
         <strong id="mbti"></strong>
-        <span>{mbtiInfo[0].subTitle}<br /><em id="name"></em>님<br />방문 감사합니다</span>
-        <button type="button" onClick={reSetIntro}>다시 설정하기</button>
+        <span>
+          {mbtiInfo[0].subTitle}
+          <br />
+          <em id="name"></em>님<br />
+          방문 감사합니다
+        </span>
+        <button type="button" onClick={reSetIntro}>
+          다시 설정하기
+        </button>
       </section>
     </>
-  )
+  );
 }

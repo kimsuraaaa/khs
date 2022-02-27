@@ -110,6 +110,7 @@ footer p{margin-top:1.6rem; font-weight:400; font-size:1.2rem; color:#A0A0B6; li
 .footer-link-area .link-lists + .link-lists{margin-left:3rem;} */
 
 @media screen and (max-width: 1024px){
+  html, body, input{font:normal normal 5px/1.2 'NanumSquare', sans-serif;}
 }
 
 

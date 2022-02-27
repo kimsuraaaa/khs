@@ -8,6 +8,7 @@ import KhsRouter from './components/KhsRouter';
 import './assets/styles/common.scss';
 import './assets/styles/common.css';
 
+// const helloNpm = require('hsmotion');
 
 export default function App() {
   return (
@@ -18,7 +19,8 @@ export default function App() {
           <KhsRouter />
         </main>
         {/* <Footer /> */}
+        {/* {hello} */}
       </Router>
     </>
-  )
+  );
 }

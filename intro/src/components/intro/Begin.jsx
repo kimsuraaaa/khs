@@ -126,13 +126,14 @@ export default function Begin() {
 			beginCol.classList.add('motion-last');
 			setTimeout(function () {
 				delayCheck = false;
-				window.location.href = '/mbti';
+				window.location.href = '/khs/#/mbti';
 			}, 1000);
 		}
 	}
 
 	useEffect(() => {
 		introMotion(150);
+		common.windowHeightFull();
 		return () => {
 			clearInterval(motionTimer);
 		}
