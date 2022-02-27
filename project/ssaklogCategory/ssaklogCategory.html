@@ -166,10 +166,16 @@ function navListMove(e){
   let clickItem = e.parentNode.parentNode;
   let clickPointer = document.querySelector('.item-moving');
   let menuArr = [];
+  let openMenu = [];
   clickPointer.classList.add('active');
 
   let item1Depth = document.getElementById('lnbNav').querySelectorAll('.item-1depth');
   let item2Depth = document.getElementById('lnbNav').querySelectorAll('.item-2depth');
+  for(let i=0; i < item1Depth.length; i++){
+    if(item1Depth[i].classList.value.indexOf('active') !== -1){
+      openMenu.push(i);
+    }
+  }
   
   if(clickItem.classList.value.indexOf('item-1depth') !== -1){
     for(let i=0; i < item1Depth.length; i++){
@@ -184,27 +190,21 @@ function navListMove(e){
     }
   }
 
-  // 현재 위치한 부모에서 body로 직접 이동하여
-  // body를 기준으로 위치를 지정합니다.
   document.body.append(clickPointer);
 
-  // 요소를 pageX, pageY 좌표 중앙에 위치하게 합니다.
   function moveAt(pageX, pageY) {
     clickPointer.style.left = pageX - clickPointer.offsetWidth / 2 + 'px';
     clickPointer.style.top = pageY - clickPointer.offsetHeight / 2 + 'px';
   }
 
-  // 포인터 아래로 요소를 이동시킵니다.
   moveAt(event.pageX, event.pageY);
 
   function onMouseMove(event) {
     moveAt(event.pageX, event.pageY);
   }
 
-  // mousemove로 요소를 움직입니다.
   document.addEventListener('mousemove', onMouseMove);
 
-  // 요소를 드롭하고, 불필요한 핸들러를 제거합니다.
   clickPointer.onmouseup = function() {
     document.removeEventListener('mousemove', onMouseMove); // mousemove 이벤트를 remove
     clickPointer.onmouseup = null; // 
@@ -239,6 +239,7 @@ function navListMove(e){
           subMenuN = menuArr[i][1];
         }
       }
+
       console.log('내가 선택한 요소는 ' + clickItem.id.split('_')[1] + ' 의 ' + clickItem.id.split('_')[2] + '번째 / 옮기려는 위치는 : ' + menuN + ' 의 ' + subMenuN);
       let targetArr = navList[Number(clickItem.id.split('_')[1])].nav2depth[Number(clickItem.id.split('_')[2])];
       navList[Number(clickItem.id.split('_')[1])].nav2depth.splice(Number(clickItem.id.split('_')[2]), 1);
@@ -246,6 +247,9 @@ function navListMove(e){
       navSetting();
     }
 
+    for(let i=0; i < openMenu.length; i++){
+      document.querySelectorAll('.item-1depth')[openMenu[i]].classList.add('active');
+    }
     
   };
 };
