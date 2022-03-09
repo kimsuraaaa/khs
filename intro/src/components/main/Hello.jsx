@@ -6,7 +6,7 @@ import '../../assets/styles/main.scss';
 export default function Hello() {
     useEffect(() => {
         const nameCard = document.querySelectorAll('.name-card');
-        const userName = common.getCookie('userName');
+        const userName = localStorage.getItem('userName');
         for (let i = 0; i < nameCard.length; i++) {
             nameCard[i].innerHTML = userName;
         }

@@ -29,11 +29,11 @@ export default function Header() {
 
   const mbtiInfo =
     MbtiData &&
-    MbtiData.filter((list) => list.resultType === common.getCookie('mbti'));
+    MbtiData.filter((list) => list.resultType === localStorage.getItem('mbti'));
 
   useEffect(() => {
-    let mbti = common.getCookie('mbti');
-    let name = common.getCookie('userName');
+    let mbti = localStorage.getItem('mbti');
+    let name = localStorage.getItem('userName');
 
     if (
       mbti === '' ||

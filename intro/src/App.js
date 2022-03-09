@@ -6,6 +6,7 @@ import Footer from './components/common/Footer';
 import KhsRouter from './components/KhsRouter';
 
 import './assets/styles/common.scss';
+import './assets/styles/reset.css';
 import './assets/styles/common.css';
 
 // const helloNpm = require('hsmotion');

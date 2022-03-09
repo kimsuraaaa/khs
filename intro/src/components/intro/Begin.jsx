@@ -91,7 +91,7 @@ export default function Begin() {
 		}
 	];
 
-	let userName = (common.getCookie('userName') === '' || common.getCookie('userName') === null) ? '방문자' : common.getCookie('userName');
+	let userName = (localStorage.getItem('userName') === '' || localStorage.getItem('userName') === null) ? '방문자' : localStorage.getItem('userName');
 
 	const introMotion = (sec) => {
 		let introItem = document.querySelectorAll('.intro-item');

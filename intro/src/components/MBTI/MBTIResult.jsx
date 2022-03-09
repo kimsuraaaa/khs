@@ -16,7 +16,7 @@ export default function MBTIResult(props, resultList) {
   };
 
   const moveMain = () => {
-    common.setCookie('mbti', document.getElementById('mbtiType').innerText);
+    localStorage.setItem('mbti', document.getElementById('mbtiType').innerText);
     window.location.href = '/khs/#/main';
   };
 

@@ -8,6 +8,8 @@ import Contact from './Contact';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import PortfolioBlogList from './PortfolioBlogList';
+import ModalPortal from '../../ModalPortal';
+import ModalPopup from '../modal/ModalPopup';
 
 export default function Main() {
   return (
@@ -19,6 +21,9 @@ export default function Main() {
       <PortfolioBlogList />
       <Contact />
       <Footer />
+      {/* <ModalPortal>
+        <ModalPopup />
+      </ModalPortal> */}
     </>
   );
 }

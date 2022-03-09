@@ -33,15 +33,15 @@ export default function Intro() {
             introCol.classList.add('motion-last');
             setTimeout(function () {
                 delayCheck = false;
-                common.setCookie('userName', userName);
+                localStorage.setItem('userName', userName); 
                 window.location.href = '/khs/#/begin';
             }, 1000);
         }
     }
 
     const loginChecking = () => {
-        let userName = common.getCookie('userName');
-        let mbti = common.getCookie('mbti');
+        let userName = localStorage.getItem('userName');
+        let mbti = localStorage.getItem('mbti');
         if (userName === '' || mbti === '' || userName === null || mbti === null) {
             loginCheck = false;
         } else {
