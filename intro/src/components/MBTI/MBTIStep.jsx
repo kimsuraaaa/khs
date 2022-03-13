@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AptitudeTestData from '../../data/QuizStepData.json';
+import MbtiTestData from '../../data/QuizStepData.json';
 import hsPackage from 'hsmotion';
 
 export default function MBTIStep(props) {
@@ -15,10 +15,10 @@ export default function MBTIStep(props) {
     let stepTitle = document.querySelector('.step-title');
     let stepItem = document.querySelectorAll('.step-item');
 
-    if (step < AptitudeTestData.length) {
+    if (step < MbtiTestData.length) {
       // 마지막 문제인지 체크, 마지막 문제라면 결과페이지로 이동
       document.querySelector('.step-progress').childNodes[0].style.width =
-        ((step + 1) / AptitudeTestData.length) * 100 + '%'; // 상단 progress-bar 진행률 표기
+        ((step + 1) / MbtiTestData.length) * 100 + '%'; // 상단 progress-bar 진행률 표기
       stepTitle.classList.remove('active'); // 타이틀 active 리셋 (등장 motion 목적)
 
       for (let i = 0; i < stepItem.length; i++) {
@@ -41,19 +41,19 @@ export default function MBTIStep(props) {
   });
 
   useEffect(() => {
-    hsPackage.minHeightFull('.aptitude-col');
+    hsPackage.minHeightFull('.mbti-col');
   }, []);
 
   return (
     <>
-      <section className="aptitude-col">
+      <section className="mbti-col">
         <div className="inner-col">
           <div className="step-box">
             <div className="step-progress">
               <span></span>
             </div>
-            {AptitudeTestData &&
-              AptitudeTestData.filter((item, index) => index === step).map(
+            {MbtiTestData &&
+              MbtiTestData.filter((item, index) => index === step).map(
                 (item, index) => (
                   <dl key={index}>
                     <dt className={`step-title ` + item.category}>

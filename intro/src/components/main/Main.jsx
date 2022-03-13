@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../assets/styles/common.scss';
 import '../../assets/styles/main.scss';
 import Hello from './Hello';
@@ -8,10 +8,14 @@ import Contact from './Contact';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
 import PortfolioBlogList from './PortfolioBlogList';
-import ModalPortal from '../../ModalPortal';
-import ModalPopup from '../modal/ModalPopup';
 
 export default function Main() {
+  // const [isOpenModal, setIsOpenModal] = useState(false)
+
+  // useEffect(() => {
+  //   setIsOpenModal(true);
+  // }, []);
+
   return (
     <>
       <Header />
@@ -21,9 +25,6 @@ export default function Main() {
       <PortfolioBlogList />
       <Contact />
       <Footer />
-      {/* <ModalPortal>
-        <ModalPopup />
-      </ModalPortal> */}
     </>
   );
 }

@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../assets/styles/common.scss';
 import '../../assets/styles/main.scss';
+
+import ModalPopup from '../modal/ModalPopup'; // Modal component
+import ModalTest from '../modal/ModalTest'; // Modal contents test component
+import ModalTest2 from '../modal/ModalTest2';
+import Aptitude from '../project/apitiude/AptitudeMain';
 
 import img_ynd_intro from '../../assets/images/main/img_ynd_intro.jpg';
 import img_ticketing from '../../assets/images/main/img_ticketing.png';
@@ -10,12 +15,21 @@ import img_spooner from '../../assets/images/main/img_spooner.png';
 import img_bettingspoon from '../../assets/images/main/img_bettingspoon.png';
 import img_ssaklog_lnb from '../../assets/images/main/img_ssaklog_lnb.png';
 import img_ynd_yu from '../../assets/images/main/img_ynd_yu.png';
+import img_aptitude from '../../assets/images/main/img_aptitude.png';
 
+let modalTarget = '';
 const commingSoon = () => {
   alert('업데이트 예정입니다.');
 };
 
 export default function PortfolioFrontDev() {
+  // modal Open 여부 useState
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  // 해당 컴포넌트에 팝업이 n개일때 modalControl 함수를 통해 원하는 팝업을 노출 시킴
+  const modalControl = (modalName) => {
+    modalTarget = modalName;
+    setIsOpenModal(true);
+  }
   const motionList = [
     {
       mainTitle: 'hsMotion Package module',
@@ -40,6 +54,14 @@ export default function PortfolioFrontDev() {
       pageURL: '/khs/project/yndYanadooUniversity/yndYanadooUniversity.html',
       linkType: 'blank',
       imageURL: img_ynd_yu,
+    },
+    {
+      mainTitle: 'Yanadoo 적성검사',
+      keyword: '#프론트개발, #React',
+      subTitle: '적성검사',
+      pageURL: 'khs/#/Aptitude',
+      linkType: 'blank',
+      imageURL: img_aptitude,
     },
     {
       mainTitle: 'Ticketing Event Motion',
@@ -74,14 +96,6 @@ export default function PortfolioFrontDev() {
       imageURL: img_ssaklog_lnb,
     },
     {
-      mainTitle: 'Yanadoo Mindset',
-      keyword: '#프론트개발, #모션',
-      subTitle: '야나두 입학 서약서 작성',
-      pageURL: '/khs/#/interaction',
-      linkType: 'soon',
-      imageURL: img_ynd_intro,
-    },
-    {
       mainTitle: 'Yanadoo Audio',
       keyword: '#프론트개발, #모션',
       subTitle: '랜덤 컨텐츠 만들기',
@@ -89,7 +103,7 @@ export default function PortfolioFrontDev() {
       imageURL: img_ynd_intro,
     },
     {
-      mainTitle: 'Yanadoo Intro Sample (PC)',
+      mainTitle: 'Scroll event Sample (PC)',
       keyword: '#프론트개발, #모션',
       subTitle: 'Scroll event 활용 야나두 소개 샘플링 페이지 (javascript, css)',
       pageURL: '/khs/project/yndInteraction/yndInteraction.html',
@@ -97,6 +111,7 @@ export default function PortfolioFrontDev() {
       imageURL: img_ynd_intro,
     },
   ];
+
   return (
     <>
       <section className="main-section interest-col motion-col">
@@ -107,6 +122,9 @@ export default function PortfolioFrontDev() {
             <span></span>
           </div>
           <div className="play-list">
+            {/* <button type='button' onClick={() => modalControl('test1')}>test</button>
+            <button type='button' onClick={() => modalControl('test2')}>test2</button>
+            <button type='button' onClick={() => modalControl('Aptitude')}>Aptitude</button> */}
             <ul>
               {motionList &&
                 motionList.map((item, idx) => (
@@ -121,6 +139,7 @@ export default function PortfolioFrontDev() {
                       >
                         <p>
                           <strong>{item.mainTitle}</strong>
+                          <span>{item.keyword}</span>
                           {item.subTitle}
                         </p>
                       </a>
@@ -128,6 +147,7 @@ export default function PortfolioFrontDev() {
                       <button type="button" className="soon" onClick={commingSoon}>
                         <p>
                           <strong>{item.mainTitle}</strong>
+                          <span>{item.keyword}</span>
                           {item.subTitle}
                         </p>
                       </button>
@@ -140,6 +160,7 @@ export default function PortfolioFrontDev() {
                       >
                         <p>
                           <strong>{item.mainTitle}</strong>
+                          <span>{item.keyword}</span>
                           {item.subTitle}
                         </p>
                       </a>
@@ -150,6 +171,16 @@ export default function PortfolioFrontDev() {
           </div>
         </div>
       </section>
+      {/* open 속성에 modal open 여부를 설정한다. onClseModal 값을 통해 modal close 기능을 구현한다. */}
+      <ModalPopup open={isOpenModal} onCloseModal={() => setIsOpenModal(false)}>
+        {modalTarget === 'test1' ? (
+          <ModalTest />
+        ) : modalTarget === 'test2' ? (
+          <ModalTest2 />
+        ) : modalTarget === 'Aptitude' ? (
+          <Aptitude />
+        ) : null}
+      </ModalPopup>
     </>
   );
 }

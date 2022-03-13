@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
+import ModalPopup from './components/modal/ModalPopup';
 
-export default function ModalPortal( children ){
-// export default function ModalPortal(){
+export default function ModalPortal(){
   const el = document.getElementById('modal');
-  // const children = '<div>test2</div>';
-  return ReactDOM.createPortal(children, el);
+  const modalContents = <ModalPopup />;
+  return ReactDOM.createPortal(modalContents, el);
 }

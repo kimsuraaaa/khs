@@ -22,8 +22,8 @@ export default function Header() {
   };
 
   const reSetIntro = () => {
-    common.deleteCookie('userName');
-    common.deleteCookie('mbti');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('mbti');
     window.location.href = '/khs/#/';
   };
 
@@ -58,7 +58,7 @@ export default function Header() {
       <header className={isActive ? 'active' : null}>
         <div className="header-box">
           <h1>
-            <a href="/khs/#/main">
+            <a href="/khs/">
               <em>K</em>
               <span>IM</span>
               <em>H</em>

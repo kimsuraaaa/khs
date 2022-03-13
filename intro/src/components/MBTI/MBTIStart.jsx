@@ -3,20 +3,20 @@ import hsPackage from 'hsmotion';
 
 export default function MBTIStart(props) {
   const pageMoveStep = () => {
-    document.querySelector('.aptitude-col').classList.add('aqtitude-start');
+    document.querySelector('.mbti-col').classList.add('mbti-start');
     setTimeout(function () {
       props.getPageType('step');
     }, 1500);
   };
 
   useEffect(() => {
-    document.querySelector('.aptitude-col').classList.add('active');
-    hsPackage.minHeightFull('.aptitude-col');
+    document.querySelector('.mbti-col').classList.add('active');
+    hsPackage.minHeightFull('.mbti-col');
   }, []);
 
   return (
     <>
-      <section className="aptitude-col start">
+      <section className="mbti-col start">
         <div className="inner-col">
           <div className="begin-box">
             <dl>

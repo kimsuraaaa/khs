@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import * as common from '../../js/common';
-import AptitudeResultData from '../../data/QuizStepResultData.json';
+import MbtiResultData from '../../data/QuizStepResultData.json';
 import hsPackage from 'hsmotion';
 
 export default function MBTIResult(props, resultList) {
   const [filterResult, setFilterResult] = useState('');
 
   const resultView = (type) => {
-    document.querySelector('.aptitude-col').classList.add('result-view');
+    document.querySelector('.mbti-col').classList.add('result-view');
     setFilterResult(type);
   };
 
@@ -28,18 +27,18 @@ export default function MBTIResult(props, resultList) {
         props.resultList[3]
     );
 
-    hsPackage.minHeightFull('.aptitude-col');
+    hsPackage.minHeightFull('.mbti-col');
   }, []);
 
   return (
     <>
-      <div className="aptitude-col">
+      <div className="mbti-col">
         <div className="inner-col">
           <div className="progress-box">
             <span className="progress-item">결과 확인 중</span>
           </div>
-          {AptitudeResultData &&
-            AptitudeResultData.filter(
+          {MbtiResultData &&
+            MbtiResultData.filter(
               (item) => item.resultType === filterResult
             ).map((item, index) => (
               <div className="result-box" key={index}>

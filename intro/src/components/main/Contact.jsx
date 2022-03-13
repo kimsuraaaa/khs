@@ -30,7 +30,8 @@ export default function Contact() {
             </p>
             <p>
               mail :{' '}
-              <a href="mailto:sosu20161008@gmail.com">sosu20161008@gmail.com</a>
+              {/* <a href="mailto:sosu20161008@gmail.com">sosu20161008@gmail.com</a> */}
+              <a href="mailto:hyunsusora@gmail.com">hyunsusora@gmail.com</a>
             </p>
           </div>
         </div>

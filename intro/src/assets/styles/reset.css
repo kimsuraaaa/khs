@@ -31,3 +31,4 @@ input:-ms-input-placeholder{color:#000;}
 .ellipsis{overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 .ellipsis.line-clamp-2{display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; white-space:normal;}
 .inner-col {position:relative; max-width:1200px; margin:0 auto;}
+em{font-style:normal;}

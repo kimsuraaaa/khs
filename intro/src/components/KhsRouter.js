@@ -2,13 +2,10 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Intro from './intro/Intro';
 import MBTI from './MBTI/MBTIMain';
-import Interaction from './interaction/ScrollMotion';
-import YTA from './interaction/YTA';
-import TheoryList from './Theory/TheoryList';
-import TheoryDetail from './Theory/TheoryDetail';
 import NotFoundPage from './common/NotFoundPage';
 import Begin from './intro/Begin';
 import Main from './main/Main';
+import Aptitude from './project/apitiude/AptitudeMain';
 
 export default function KhsRouter() {
   return (
@@ -19,12 +16,8 @@ export default function KhsRouter() {
           <Route path="/begin" component={Begin} />
           <Route path="/mbti" component={MBTI} />
           <Route path="/main" component={Main} />
-
-          <Route path="/yta" component={YTA} />
-          <Route path="/interaction" component={Interaction} />
-          <Route path="/theory" component={TheoryList} />
-          <Route path="/theoryDetail" component={TheoryDetail} />
-
+          <Route path="/aptitude" component={Aptitude} />
+          
           <Route path='*' component={NotFoundPage} />
         </Switch>
       </HashRouter>
