@@ -12,12 +12,12 @@
   {
     "linkType": "scroll",
     "tagName": ".motion-col",
-    "menuName": "motion"
+    "menuName": "front"
   },
   {
     "linkType": "scroll",
     "tagName": ".front-col",
-    "menuName": "front"
+    "menuName": "blog"
   },
   {
     "linkType": "scroll",

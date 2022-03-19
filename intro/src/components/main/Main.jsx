@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../../assets/styles/common.scss';
 import '../../assets/styles/main.scss';
 import Hello from './Hello';
@@ -10,12 +10,6 @@ import Footer from '../common/Footer';
 import PortfolioBlogList from './PortfolioBlogList';
 
 export default function Main() {
-  // const [isOpenModal, setIsOpenModal] = useState(false)
-
-  // useEffect(() => {
-  //   setIsOpenModal(true);
-  // }, []);
-
   return (
     <>
       <Header />

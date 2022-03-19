@@ -239,8 +239,12 @@
                   font-size: 3.2rem;
                   line-height: 1.6;
                   color: #3B3B4D;
+                  em{
+                      font-weight:700;
+                      color:#446ab3;
+                  }
               }
-              a {
+              a, button {
                   display: block;
                   width: 62.4rem;
                   margin: 8rem auto 12.8rem;

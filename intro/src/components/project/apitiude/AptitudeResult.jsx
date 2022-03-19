@@ -1,12 +1,10 @@
 import React, { useState, useEffect }  from 'react';
-import { Link } from 'react-router-dom';
 import '../../../assets/styles/aptitude.scss';
 import AptitudeResultData from './AptitudeResultData.json';
 
 export default function AptitudeResult ({props, resultList}) {
     const [filterResult, setFilterResult] = useState('');
-    let loginCheck = false; // 로그인 처리 테스트용
-    let userName = '김현수'; // 로그인 시 userName 값 필요
+    let userName = localStorage.getItem('userName');
 
     const resultView = () => {
         setTimeout(function() { 
@@ -34,14 +32,10 @@ export default function AptitudeResult ({props, resultList}) {
                 document.querySelectorAll('.user-name')[i].innerHTML = userName;
             }
         }, 3000);
-
-        loginCheck = true;
     }
 
     useEffect(() => {
-        window.confirm('확인을 누르시면 로그인 처리됩니다.\n(추후 로그인 연결 필요)')
-        ? resultView() 
-        : props.getPageType('start') // 로그인 처리되지 않았다면 시작 페이지로 돌아가라
+        resultView();
     }, [])
     return (
         <>
@@ -53,7 +47,6 @@ export default function AptitudeResult ({props, resultList}) {
                     {AptitudeResultData &&
                         AptitudeResultData.filter(item => item.resultType === filterResult).map((item, index) =>
                         <div className="result-box" key={index}>
-                            <img src={item.resultImg} alt="" />
                             <dl>
                                 <dt>
                                     {item.resultTitle}<br/>
@@ -61,18 +54,11 @@ export default function AptitudeResult ({props, resultList}) {
                                 </dt>
                                 <dd>
                                     <p className="result-content">{item.resultContent}</p>
-                                    <Link to={{
-                                            pathname: item.linkURL
-                                        }}
-                                    >
+                                    <button type="button" onClick={() => window.close()}>
                                         <span>{item.linkText}</span>
-                                    </Link>
+                                    </button>
                                 </dd>
                             </dl>
-                            <div className="second-recommend">
-                                <p>두 번째로 추천해요</p>
-                                <img src={item.resultSecondImg} alt="" />
-                            </div>
                         </div>
                         )
                     }
