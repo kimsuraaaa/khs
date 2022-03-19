@@ -726,7 +726,7 @@ section {
   width: 100%;
   height: 100%;
   margin: auto;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/landing/audio/2021/mar/img_price_obj_01_v2.png)
+  background: url(image/img_price_obj_01_v2.png)
     no-repeat 50% 50%;
   background-size: 100%;
   animation: price-motion 5s infinite;
@@ -742,7 +742,7 @@ section {
   width: 100%;
   height: 100%;
   margin: auto;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/landing/audio/2021/mar/img_price_obj_02_v2.png)
+  background: url(image/img_price_obj_02_v2.png)
     no-repeat 50% 50%;
   background-size: 100%;
   animation: price-motion 5s 0.04s infinite;
@@ -771,7 +771,7 @@ section {
   width: 100%;
   height: 100%;
   margin: auto;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/landing/audio/2021/mar/img_price_obj_03_v2.png)
+  background: url(image/img_price_obj_03_v2.png)
     no-repeat 50% 50%;
   background-size: 100%;
   animation: price-motion 5s 0.08s infinite;
@@ -787,7 +787,7 @@ section {
   width: 100%;
   height: 100%;
   margin: auto;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/landing/audio/2021/mar/img_price_obj_04_v2.png)
+  background: url(image/img_price_obj_04_v2.png)
     no-repeat 50% 50%;
   background-size: 100%;
   animation: price-motion 5s 0.12s infinite;
@@ -918,7 +918,7 @@ section {
   margin: auto;
   font-size: 23px;
   background: #080e15
-    url(https://english.yanadoocdn.com/upload/yanadoo/mobile/event/cheerupSong/season3/bg_submain_pc.jpg)
+    url(image/bg_submain_pc.jpg)
     no-repeat 50% 0;
 }
 #cheerupBg:before {
@@ -928,7 +928,7 @@ section {
   left: 65%;
   width: 6em;
   height: 4em;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/event/cheerupSong/season3/img_drop_star.png)
+  background: url(image/img_drop_star.png)
     no-repeat 50% 50%;
   background-size: 100%;
   animation: motion-drop 2.4s infinite;
@@ -940,7 +940,7 @@ section {
   left: 25%;
   width: 6em;
   height: 4em;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/event/cheerupSong/season3/img_drop_star.png)
+  background: url(image/img_drop_star.png)
     no-repeat 50% 50%;
   background-size: 100%;
   animation: motion-drop 2.4s 1.2s infinite backwards;
@@ -971,7 +971,7 @@ section {
   width: 360px;
   height: 421px;
   margin: auto;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/event/cheerupSong/season3/img_submain_title.png)
+  background: url(image/img_submain_title.png)
     no-repeat 50% 50%;
   background-size: 100%;
   text-indent: -9999em;
@@ -1412,7 +1412,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/pc/landing/yafit/2021/feb/bg_cycle_v3.png)
+  background: url(image/bg_cycle_v3.png)
     50% 100% no-repeat;
   background-size: 90%;
   z-index: 2;
@@ -1596,7 +1596,7 @@ section {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url(https://english.yanadoocdn.com/upload/yanadoo/mobile/landing/yafitLite/2021/jul/img_self_check_title.png)
+  background: url(image/img_self_check_title.png)
     no-repeat 50% 40%;
   transition: 1s;
   opacity: 0;
