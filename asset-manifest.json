@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/khs/static/css/main.88e98389.chunk.css",
-    "main.js": "/khs/static/js/main.0bbf1566.chunk.js",
-    "main.js.map": "/khs/static/js/main.0bbf1566.chunk.js.map",
+    "main.js": "/khs/static/js/main.d59ed0f7.chunk.js",
+    "main.js.map": "/khs/static/js/main.d59ed0f7.chunk.js.map",
     "runtime-main.js": "/khs/static/js/runtime-main.a86f402a.js",
     "runtime-main.js.map": "/khs/static/js/runtime-main.a86f402a.js.map",
     "static/js/2.52d5e070.chunk.js": "/khs/static/js/2.52d5e070.chunk.js",
@@ -42,6 +42,7 @@
     "static/media/img_spooner.524280f1.png": "/khs/static/media/img_spooner.524280f1.png",
     "static/media/img_spooner.860f8da0.jpg": "/khs/static/media/img_spooner.860f8da0.jpg",
     "static/media/img_ssaklog_lnb.0c263c2f.png": "/khs/static/media/img_ssaklog_lnb.0c263c2f.png",
+    "static/media/img_study_01.e124b0fb.png": "/khs/static/media/img_study_01.e124b0fb.png",
     "static/media/img_swiperreact.850a4bf5.jpg": "/khs/static/media/img_swiperreact.850a4bf5.jpg",
     "static/media/img_ticketing.6e4dec35.png": "/khs/static/media/img_ticketing.6e4dec35.png",
     "static/media/img_ynd_easter_egg.578de0b9.png": "/khs/static/media/img_ynd_easter_egg.578de0b9.png",
@@ -53,6 +54,6 @@
     "static/js/runtime-main.a86f402a.js",
     "static/js/2.52d5e070.chunk.js",
     "static/css/main.88e98389.chunk.css",
-    "static/js/main.0bbf1566.chunk.js"
+    "static/js/main.d59ed0f7.chunk.js"
   ]
 }
