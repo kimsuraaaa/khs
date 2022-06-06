@@ -15,8 +15,12 @@
 
 .main-section {
   position: relative;
-  padding: 12rem 0 12rem 0;
+  padding: 12rem 0 6rem 0;
   border-bottom: 0.1rem solid #ddd;
+  canvas {
+    display: block;
+    margin: auto;
+  }
 }
 
 // hello
@@ -319,8 +323,7 @@
           }
         }
         .soon {
-          background: url(../images/main/ico_logo_black.png) no-repeat 50% 30% /
-            14rem auto;
+          background: url(../images/main/ico_logo_black.png) no-repeat 50% 30% / 14rem auto;
           &:hover {
             background-size: 17rem auto;
           }
@@ -349,7 +352,7 @@
           }
           span {
             display: block;
-            padding-bottom: .3rem;
+            padding-bottom: 0.3rem;
           }
         }
       }
@@ -372,15 +375,15 @@
         vertical-align: top;
         background-color: #fff;
         border-bottom: 1px solid #ddd;
-        &:first-child{
-          border-top: 1px solid #ddd;  
+        &:first-child {
+          border-top: 1px solid #ddd;
         }
         a,
         button {
           display: block;
           width: 100%;
           height: 100%;
-          padding: 5rem 5rem 5rem 25rem ;
+          padding: 5rem 5rem 5rem 25rem;
           background-repeat: no-repeat;
           background-position: 2rem 50%;
           background-size: 20rem auto;
@@ -405,7 +408,7 @@
           border-bottom-left-radius: 1.6rem;
           strong {
             display: block;
-            padding: .3rem 0 .8rem;
+            padding: 0.3rem 0 0.8rem;
             font-weight: 500;
             font-size: 4.2rem;
             color: #3a3a3a;
@@ -574,8 +577,7 @@
             }
           }
           .soon {
-            background: url(../images/main/ico_logo_black.png) no-repeat 50% 30% /
-              14rem auto;
+            background: url(../images/main/ico_logo_black.png) no-repeat 50% 30% / 14rem auto;
             &:hover {
               background-size: 17rem auto;
             }
