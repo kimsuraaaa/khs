@@ -4,6 +4,7 @@ import '../../assets/styles/main.scss';
 
 import img_scrollmove from '../../assets/images/bloglist/img_scrollmove.jpg';
 import img_npmpackage from '../../assets/images/bloglist/img_npmpackage.jpg';
+import img_study01 from '../../assets/images/bloglist/img_study_01.png';
 import img_swiperreact from '../../assets/images/bloglist/img_swiperreact.jpg';
 import img_spooner from '../../assets/images/bloglist/img_spooner.jpg';
 import img_browser from '../../assets/images/bloglist/img_browser.jpg';
@@ -23,6 +24,13 @@ export default function PortfolioBlogList() {
       pageURL: 'https://mire-diascia-324.notion.site/NPM-Package-420ae483a2d04a14bee8be0f8fc88c14',
       linkType: 'blank',
       imageURL: img_npmpackage,
+    },
+    {
+      mainTitle: '직사각형넓이 구하기',
+      subTitle: '프로그래머스 javascript 테스트 코드 작성',
+      pageURL: 'https://mire-diascia-324.notion.site/08acbd1247fa4f838277b0965dd26430',
+      linkType: 'blank',
+      imageURL: img_study01,
     },
     {
       mainTitle: 'NextJS',

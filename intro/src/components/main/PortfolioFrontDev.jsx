@@ -32,6 +32,14 @@ export default function PortfolioFrontDev() {
   }
   const motionList = [
     {
+      mainTitle: 'hsSlide',
+      keyword: '#vanillaJS',
+      subTitle: '바닐라JS 슬라이드 개발중',
+      pageURL: '/khs/project/hsSlide/hsSlide.html',
+      linkType: 'blank',
+      imageURL: img_npmPackage,
+    },
+    {
       mainTitle: 'hsMotion Package module',
       keyword: '#프론트개발',
       subTitle: 'hsMotion Package 개발 및 NPM 배포',
