@@ -16,6 +16,7 @@ import img_bettingspoon from '../../assets/images/main/img_bettingspoon.png';
 import img_ssaklog_lnb from '../../assets/images/main/img_ssaklog_lnb.png';
 import img_ynd_yu from '../../assets/images/main/img_ynd_yu.png';
 import img_aptitude from '../../assets/images/main/img_aptitude.png';
+import img_ssaklog from '../../assets/images/main/img_ssaklog.png';
 
 let modalTarget = '';
 const commingSoon = () => {
@@ -29,12 +30,21 @@ export default function PortfolioFrontDev() {
   const modalControl = (modalName) => {
     modalTarget = modalName;
     setIsOpenModal(true);
-  }
+  };
   const motionList = [
+    {
+      mainTitle: 'SSAKLOG',
+      keyword: '#NEXTJS, #Typescript',
+      subTitle: '토이프로젝트 SSAKLOG (진행중)',
+      pageURL:
+        'https://lime-textbook-f24.notion.site/c2bcb6f0401f4267847f1b621f7d8c24?v=6dfbfaa5ea4145ebacce1c18d8953f52',
+      linkType: 'blank',
+      imageURL: img_ssaklog,
+    },
     {
       mainTitle: 'hsSlide',
       keyword: '#vanillaJS',
-      subTitle: '바닐라JS 슬라이드 개발중',
+      subTitle: '바닐라JS 슬라이드 (진행중)',
       pageURL: '/khs/project/hsSlide/hsSlide.html',
       linkType: 'blank',
       imageURL: img_npmPackage,
