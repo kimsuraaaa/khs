@@ -19,7 +19,37 @@
 .slide-box{display:block; position:relative;}
 .slide-box .slide-item{position:absolute; top:0; width:100%; }
 .slide-box .slide-item img{display:block; max-width:100%;}
+
+.test-item{
+  translate: rotateX(45deg);
+  translate: rotateY(30deg);
+  translate: rotateZ(156deg);
+}
+
+.dddd div ~p{background-color:pink}
+.dddd p + div{background-color:yellow}
+.dddd .first + div{
+  background-color:blue;
+}
+.dddd .first p{background-color:green;}
 </style>
+<div class="dddd">
+<div class="first">
+  <p>dd</p>
+  <p>dff</p>
+</div>
+<div class="second">
+  <p>fff</p>
+</div>
+<p>ffdsf</p>
+<div class="third">
+  <p>fdfsf</p>
+</div>
+<p>dfdsf</p>
+</div>
+
+</div>
+
         <div class="sample-slide">
           <ul class="slide-box">
             <li class="slide-item"><img src="images/img_sample1.jpg" alt="" /><p>1</p></li>
@@ -31,6 +61,13 @@
           </ul>
         </div>
 <script>
+  let ttA = [1,2,3,4,5];
+  function testA(arr){
+    let resultArr = [...arr].reverse();
+    return resultArr;
+  }
+  testA(ttA);
+  
 
 function hsSlide(tagName){
   let hsInterval;
