@@ -31,11 +31,20 @@ export default function PortfolioFrontDev() {
     modalTarget = modalName;
     setIsOpenModal(true);
   };
+
   const motionList = [
     {
-      mainTitle: 'SSAKLOG',
+      mainTitle: 'SSAKLOG (진행중)',
       keyword: '#NEXTJS, #Typescript',
-      subTitle: '토이프로젝트 SSAKLOG (진행중)',
+      subTitle: '토이프로젝트 SSAKLOG',
+      pageURL: 'https://ssaklog.netlify.app/',
+      linkType: 'blank',
+      imageURL: img_ssaklog,
+    },
+    {
+      mainTitle: 'SSAKLOG 문서정리 (진행중)',
+      keyword: '#NEXTJS, #Typescript',
+      subTitle: '토이프로젝트 SSAKLOG',
       pageURL:
         'https://lime-textbook-f24.notion.site/c2bcb6f0401f4267847f1b621f7d8c24?v=6dfbfaa5ea4145ebacce1c18d8953f52',
       linkType: 'blank',
