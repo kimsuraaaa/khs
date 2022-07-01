@@ -317,6 +317,7 @@
         let groupData = '';
         let memberData = '';
         let moving = 0;
+        let mainInterval;
         let endInterval;
         let captainComment = '';
         let userComment = '';
@@ -399,20 +400,18 @@
             bubbleItemImg[i - 1] +
             ');" onclick="effectActive(this);"></button>';
         }
-
-        function requestMotion() {
+        mainInterval = setInterval(function () {
           if (moving < yanaderList.offsetHeight) {
+            yanaderList.style.top = '-' + moving + 'px';
             bubbleGroup.style.top =
               100 - Math.ceil((moving * 100) / yanaderList.offsetHeight) + '%';
-            yanaderList.style.transform = 'translateY(-' + moving + 'px)';
-            moving += 1.5;
-            requestAnimationFrame(requestMotion);
+            moving++;
           } else {
             yanaderList.style.paddingTop = window.innerHeight + 30;
+            clearInterval(mainInterval);
             cookieMotion(0);
           }
-        }
-        requestAnimationFrame(requestMotion);
+        }, 10);
       }
 
       function effectActive(e) {
