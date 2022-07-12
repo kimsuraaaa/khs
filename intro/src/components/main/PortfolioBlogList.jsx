@@ -11,6 +11,7 @@ import img_browser from '../../assets/images/bloglist/img_browser.jpg';
 import img_markup from '../../assets/images/bloglist/img_markup.jpg';
 import img_entitycode from '../../assets/images/bloglist/img_entitycode.jpg';
 import img_nextjs from '../../assets/images/bloglist/img_nextjs.jpg';
+import img_editor from '../../assets/images/bloglist/img_editor.png';
 
 const commingSoon = () => {
   alert('업데이트 예정입니다.');
@@ -18,6 +19,13 @@ const commingSoon = () => {
 
 export default function PortfolioBlogList() {
   const motionList = [
+    {
+      mainTitle: '[SSAKLOG] 커스텀 에디터 컴포넌트 개발',
+      subTitle: 'Contenteditable 커스텀 에디터 컴포넌트 개발(진행중)',
+      pageURL: 'https://mire-diascia-324.notion.site/SSAKLOG-7c2c3e88db29477b821beeea922aa443',
+      linkType: 'blank',
+      imageURL: img_editor,
+    },
     {
       mainTitle: 'NPM Package',
       subTitle: '내가 만든 module을 NPM Package 배포를 통해 사용해 보자.',
@@ -63,7 +71,8 @@ export default function PortfolioBlogList() {
     {
       mainTitle: 'Browser Rendering',
       subTitle: 'Web Browser 구조와 Rendering 과정 이해.',
-      pageURL: 'https://mire-diascia-324.notion.site/Browser-Rendering-cba78a237a5a41d58df4599ecef3b6e1',
+      pageURL:
+        'https://mire-diascia-324.notion.site/Browser-Rendering-cba78a237a5a41d58df4599ecef3b6e1',
       linkType: 'blank',
       imageURL: img_browser,
     },
@@ -80,7 +89,7 @@ export default function PortfolioBlogList() {
       pageURL: 'https://mire-diascia-324.notion.site/Markup-538911e098694aa1a9d0d5006c6e40dc',
       linkType: 'blank',
       imageURL: img_markup,
-    }
+    },
   ];
   return (
     <>
@@ -110,11 +119,7 @@ export default function PortfolioBlogList() {
                         </p>
                       </a>
                     ) : item.linkType === 'soon' ? (
-                      <button
-                        type="button"
-                        className="soon"
-                        onClick={commingSoon}
-                      >
+                      <button type="button" className="soon" onClick={commingSoon}>
                         <p>
                           <strong>{item.mainTitle}</strong>
                           {item.subTitle}
