@@ -12,6 +12,7 @@ import img_markup from '../../assets/images/bloglist/img_markup.jpg';
 import img_entitycode from '../../assets/images/bloglist/img_entitycode.jpg';
 import img_nextjs from '../../assets/images/bloglist/img_nextjs.jpg';
 import img_editor from '../../assets/images/bloglist/img_editor.png';
+import img_tensorflow from '../../assets/images/bloglist/img_tensorflow.png';
 
 const commingSoon = () => {
   alert('업데이트 예정입니다.');
@@ -19,6 +20,14 @@ const commingSoon = () => {
 
 export default function PortfolioBlogList() {
   const motionList = [
+    {
+      mainTitle: 'TensorFlowjs',
+      subTitle: 'TensorFlowjs를 적용해보고, 샘플페이지를 만들어 보자.',
+      pageURL:
+        'https://mire-diascia-324.notion.site/TensorFlow-js-440b6c638d5c4478884cf9fd3aecf993',
+      linkType: 'blank',
+      imageURL: img_tensorflow,
+    },
     {
       mainTitle: '[SSAKLOG] 커스텀 에디터 컴포넌트 개발',
       subTitle: 'Contenteditable 커스텀 에디터 컴포넌트 개발(진행중)',

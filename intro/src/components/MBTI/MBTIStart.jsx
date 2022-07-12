@@ -6,7 +6,7 @@ export default function MBTIStart(props) {
     document.querySelector('.mbti-col').classList.add('mbti-start');
     setTimeout(function () {
       props.getPageType('step');
-    }, 1500);
+    }, 500);
   };
 
   useEffect(() => {
