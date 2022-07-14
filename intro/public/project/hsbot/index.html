@@ -123,12 +123,13 @@
 
         // 3. 데이터로 모델을 학습 (핏한다라고 함.)
         // let fitParam = { epochs: 5000 }; // epochs은 몇번을 학습할지 지정.
+        let studyCount = 2000;
         let fitParam = {
-          epochs: 1000, // 총 1000번을 학습. 정확도가 낮지만 일단 1000번으로 설정.
+          epochs: studyCount, // 총 1000번을 학습. 정확도가 낮지만 일단 1000번으로 설정.
           callbacks: {
             // 콜백으로 콘솔 출력.
             onEpochEnd: (epoch, logs) => {
-              document.getElementById('studyCount').innerHTML = epoch + '/' + 4000;
+              document.getElementById('studyCount').innerHTML = epoch + '/' + studyCount;
               console.log('epoch', epoch, logs, 'RMSE=>', Math.sqrt(logs.loss)); // RMSE 값이 0에 가까울수록, 정확도가 높다.
             },
           },
