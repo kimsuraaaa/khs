@@ -17,6 +17,7 @@ import img_ssaklog_lnb from '../../assets/images/main/img_ssaklog_lnb.png';
 import img_ynd_yu from '../../assets/images/main/img_ynd_yu.png';
 import img_aptitude from '../../assets/images/main/img_aptitude.png';
 import img_ssaklog from '../../assets/images/main/img_ssaklog.png';
+import img_tensorflow from '../../assets/images/main/img_tensorflow.png';
 
 let modalTarget = '';
 const commingSoon = () => {
@@ -33,6 +34,14 @@ export default function PortfolioFrontDev() {
   };
 
   const motionList = [
+    {
+      mainTitle: 'HSBOT',
+      keyword: '#TensorFlowjs',
+      subTitle: 'TensorFlowjs를 활용, 학습하는 HSBOT을 만들어보자.',
+      pageURL: '/khs/project/hsbot/index.html',
+      linkType: 'blank',
+      imageURL: img_tensorflow,
+    },
     {
       mainTitle: 'SSAKLOG (진행중)',
       keyword: '#NEXTJS, #Typescript',

@@ -22,7 +22,7 @@ export default function PortfolioBlogList() {
   const motionList = [
     {
       mainTitle: 'TensorFlowjs',
-      subTitle: 'TensorFlowjs를 적용해보고, 샘플페이지를 만들어 보자.',
+      subTitle: 'TensorFlowjs를 적용해보고, 샘플페이지를 만들어 보자. (진행중)',
       pageURL:
         'https://mire-diascia-324.notion.site/TensorFlow-js-440b6c638d5c4478884cf9fd3aecf993',
       linkType: 'blank',
