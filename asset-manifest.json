@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/khs/static/css/main.eb7ce16a.chunk.css",
-    "main.js": "/khs/static/js/main.0a03d7df.chunk.js",
-    "main.js.map": "/khs/static/js/main.0a03d7df.chunk.js.map",
+    "main.js": "/khs/static/js/main.21c32fea.chunk.js",
+    "main.js.map": "/khs/static/js/main.21c32fea.chunk.js.map",
     "runtime-main.js": "/khs/static/js/runtime-main.5652ee1f.js",
     "runtime-main.js.map": "/khs/static/js/runtime-main.5652ee1f.js.map",
     "static/js/2.3e1f4784.chunk.js": "/khs/static/js/2.3e1f4784.chunk.js",
@@ -47,6 +47,7 @@
     "static/media/img_study_01.e124b0fb.png": "/khs/static/media/img_study_01.e124b0fb.png",
     "static/media/img_swiperreact.850a4bf5.jpg": "/khs/static/media/img_swiperreact.850a4bf5.jpg",
     "static/media/img_tensorflow.2e5a84da.png": "/khs/static/media/img_tensorflow.2e5a84da.png",
+    "static/media/img_tensorflow.f41e13ab.png": "/khs/static/media/img_tensorflow.f41e13ab.png",
     "static/media/img_ticketing.6e4dec35.png": "/khs/static/media/img_ticketing.6e4dec35.png",
     "static/media/img_ynd_easter_egg.578de0b9.png": "/khs/static/media/img_ynd_easter_egg.578de0b9.png",
     "static/media/img_ynd_intro.82b689fb.jpg": "/khs/static/media/img_ynd_intro.82b689fb.jpg",
@@ -58,6 +59,6 @@
     "static/js/runtime-main.5652ee1f.js",
     "static/js/2.3e1f4784.chunk.js",
     "static/css/main.eb7ce16a.chunk.css",
-    "static/js/main.0a03d7df.chunk.js"
+    "static/js/main.21c32fea.chunk.js"
   ]
 }
