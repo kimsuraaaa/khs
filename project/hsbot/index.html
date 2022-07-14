@@ -87,7 +87,7 @@
       <!-- // stepLoading -->
     </div>
     <script>
-      // 2. 모델의 모양 만들기 (재사용을 위해 전역으로 지정)
+      // 1. 모델의 모양 만들기 (재사용을 위해 전역으로 지정)
       // 모델에 입력될 값이 몇개인지 적용.
       // input 함수에 인자로 shape이라는 프로퍼티 객체에 입력된 값이 몇개인가? 입력함.
       const X = tf.input({ shape: [1] }); // 이번 모델에선 1개로 유지.
@@ -96,11 +96,20 @@
 
       // 사용자가 입력한 데이터를 기반으로 학습하는 함수.
       function studyStart() {
-        document.getElementById('stepLoading').classList.add('active');
-
-        // 1. 과거 데이터 준비.
         const dataInput = document.getElementsByName('data-input');
         const dataOutput = document.getElementsByName('data-output');
+        const rejectMsg = '모든 항목을 입력해 주세요.';
+
+        for (let i = 0; dataInput.length > i; i++) {
+          if (dataInput[i].value.length + dataOutput[i].value.length <= 0) {
+            alert(rejectMsg);
+            return false;
+          }
+        }
+
+        document.getElementById('stepLoading').classList.add('active');
+
+        // 2. 규칙성 있는 샘플 데이터 입력. (패턴을 학습할 수 있는)
         let inputData = []; // 입력 샘플 데이터 (독립변수)
         let outputData = []; // 출력 데이터 (종속변수)
 
@@ -121,11 +130,10 @@
         let compileParam = { optimizer: tf.train.adam(), loss: tf.losses.meanSquaredError };
         model.compile(compileParam);
 
-        // 3. 데이터로 모델을 학습 (핏한다라고 함.)
-        // let fitParam = { epochs: 5000 }; // epochs은 몇번을 학습할지 지정.
-        let studyCount = 2000;
+        // 3. 데이터로 모델을 학습. (이것을 핏한다라고 함.)
+        let studyCount = 2000; // 총 2000번의 학습을 함. 2000번도 정확도가 좋지 않음. (고민 필요)
         let fitParam = {
-          epochs: studyCount, // 총 1000번을 학습. 정확도가 낮지만 일단 1000번으로 설정.
+          epochs: studyCount,
           callbacks: {
             // 콜백으로 콘솔 출력.
             onEpochEnd: (epoch, logs) => {
@@ -147,11 +155,11 @@
         });
       }
 
+      // 학습이 끝난 후 실행되는 함수.
       function studyComplete() {
         const dataInput = document.getElementsByName('data-input');
         const dataOutput = document.getElementsByName('data-output');
         const resultBox = document.getElementById('resultBox');
-
         dataInput.forEach((item) => {
           item.disabled = true;
         });
@@ -174,7 +182,13 @@
         document.getElementById('stepLoading').classList.remove('active');
       }
 
+      // 테스트 할 값을 입력합니다.
       function modelAction(inputNum) {
+        const rejectMsg = '입력값을 기입해 주세요.';
+        if (document.getElementById('resultDataInput').value.length <= 0) {
+          alert(rejectMsg);
+          return false;
+        }
         let resultItem = model.predict(tf.tensor([Number(inputNum)]));
         const resultDataOutput = document.getElementById('resultDataOutput');
         resultItem.array().then((array) => (resultDataOutput.innerHTML = Math.round(array[0])));
