@@ -19,6 +19,7 @@
       <!-- // header -->
       <!-- chart body -->
       <section>
+        <h1 id="chartName">bar chart</h1>
         <div class="setting-box">
           <div class="setting-list">
             <h2>차트설정</h2>
@@ -80,10 +81,18 @@
         </div>
         <button type="button" class="btn-chart-set" onclick="barChartSet();">차트그리기</button>
         <button type="button" class="btn-chart-set" onclick="autoSet();">샘플그리기</button>
+        <div class="chart-area">
+          <div class="chart-box" id="svgChartBar"></div>
+        </div>
       </section>
       <section>
-        <h1 id="chartName">bar chart</h1>
-        <div class="chart-box" id="svgChartBar"></div>
+        <h1 id="chartName">pie chart</h1>
+        <button type="button" class="btn-chart-set btn-orange" onclick="chartPie('#svgChartPie');">
+          파이차트그리기
+        </button>
+        <div class="chart-area">
+          <div class="chart-box" id="svgChartPie"></div>
+        </div>
       </section>
       <!-- // chart body -->
       <!-- footer -->

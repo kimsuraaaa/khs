@@ -161,7 +161,20 @@ footer p span {
 }
 /* section */
 section {
+  position: relative;
   padding: 10rem 0;
+}
+
+section + section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 140rem;
+  max-width: 90%;
+  margin: auto;
+  border-bottom: 0.2rem solid #ddd;
 }
 
 #svg-area {
@@ -191,6 +204,12 @@ section h1 {
 section > div {
   display: block;
   margin: auto;
+}
+section .chart-area {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
 }
 section .chart-box {
   display: inline-block;
@@ -298,6 +317,15 @@ input[type='number']::-webkit-inner-spin-button {
 .btn-chart-set:hover {
   background-color: #4b7c5e;
   transform: scale(1.2);
+}
+
+.btn-chart-set.btn-orange {
+  color: #111;
+  background-color: #ffb74d;
+}
+.btn-chart-set.btn-orange:hover {
+  color: #fff;
+  background-color: #e65100;
 }
 .btn-data-add {
   display: inline-block;

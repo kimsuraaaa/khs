@@ -105,7 +105,8 @@ function chartBar(tagName, chartData) {
   svg.node();
 }
 
-function chartPie() {
+function chartPie(tagName) {
+  const chartBox = document.querySelector(tagName);
   const svgDimensions = {
     width: 300,
     height: 300,
@@ -114,7 +115,7 @@ function chartPie() {
   const data = [420, 80, 130, 210, 510, 80];
 
   const svg = d3
-    .select('body')
+    .select(tagName)
     .append('svg')
     .attr('width', svgDimensions.width)
     .attr('height', svgDimensions.height)
