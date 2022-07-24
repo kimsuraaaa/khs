@@ -60,7 +60,7 @@
             </dl>
             <dl>
               <dt>차트 막대에 radius 값</dt>
-              <dd><input type="number" placeholder="기본값 5" /></dd>
+              <dd><input type="number" placeholder="기본값 5" id="chartBarRadius" /></dd>
             </dl>
           </div>
           <div class="setting-list" id="chartDataPlus">
@@ -79,7 +79,7 @@
           </div>
         </div>
         <button type="button" class="btn-chart-set" onclick="barChartSet();">차트그리기</button>
-        <button type="button" class="btn-chart-set" onclick="autoSet();">자동샘플셋팅</button>
+        <button type="button" class="btn-chart-set" onclick="autoSet();">샘플그리기</button>
       </section>
       <section>
         <h1 id="chartName">bar chart</h1>
@@ -113,6 +113,7 @@
           barChartHeight !== '' ? (chartData.meta.boxHeight = Number(barChartHeight)) : 400;
           chartData.meta.hoverAction = Number(barChartUnit);
           chartData.meta.unit = document.getElementById('barChartUnitText').value;
+          chartData.meta.radius = Number(document.getElementById('chartBarRadius').value);
           delete chartData.data;
           chartData.data = [];
           document.getElementsByName('chartDataName').forEach((item, idx) => {
@@ -131,6 +132,14 @@
 
         let dataLength = 1;
         function chartDataAdd() {
+          let inputData = [];
+          document.getElementsByName('chartDataName').forEach((item, idx) => {
+            inputData.push({
+              name: item.value,
+              value: document.getElementsByName('chartDataNumber')[idx].value,
+              color: document.getElementsByName('chartDataColor')[idx].value,
+            });
+          });
           dataLength++;
           document.getElementById('chartDataPlus').innerHTML +=
             '<dl>\n' +
@@ -143,6 +152,12 @@
             '    <input type="text" name="chartDataColor" placeholder="차트색상" />\n' +
             '  </dd>\n' +
             '</dl>';
+
+          inputData.forEach((item, idx) => {
+            document.getElementsByName('chartDataName')[idx].value = item.name;
+            document.getElementsByName('chartDataNumber')[idx].value = item.value;
+            document.getElementsByName('chartDataColor')[idx].value = item.color;
+          });
         }
 
         function autoSet() {
@@ -150,7 +165,6 @@
             '<h2>\n' +
             '  차트 데이터 입력\n' +
             '  <button type="button" class="btn-data-add" onclick="chartDataAdd();">추가</button>\n' +
-            '  <button type="button" class="btn-data-add" onclick="autoSet();">자동샘플셋팅</button>\n' +
             '</h2>\n' +
             '<dl>\n' +
             '  <dt>1</dt>\n' +
@@ -169,6 +183,7 @@
           document.getElementById('barChartHeight').value = 400;
           document.getElementsByName('barChartUnit')[0].checked = true;
           document.getElementById('barChartUnitText').value = '개';
+          document.getElementById('chartBarRadius').value = 5;
           document.getElementsByName('chartDataName').forEach((item, idx) => {
             document.getElementsByName('chartDataName')[idx].value = 'Sample' + (idx + 1);
             document.getElementsByName('chartDataNumber')[idx].value = Math.floor(
