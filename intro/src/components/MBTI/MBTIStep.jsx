@@ -41,7 +41,7 @@ export default function MBTIStep(props) {
   });
 
   useEffect(() => {
-    hsPackage.minHeightFull('.mbti-col');
+    // hsPackage.minHeightFull('.mbti-col');
   }, []);
 
   return (

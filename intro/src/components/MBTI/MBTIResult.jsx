@@ -27,7 +27,7 @@ export default function MBTIResult(props, resultList) {
         props.resultList[3]
     );
 
-    hsPackage.minHeightFull('.mbti-col');
+    // hsPackage.minHeightFull('.mbti-col');
   }, []);
 
   return (

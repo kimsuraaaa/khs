@@ -18,6 +18,7 @@ import img_ynd_yu from '../../assets/images/main/img_ynd_yu.png';
 import img_aptitude from '../../assets/images/main/img_aptitude.png';
 import img_ssaklog from '../../assets/images/main/img_ssaklog.png';
 import img_tensorflow from '../../assets/images/main/img_tensorflow.png';
+import img_d3chart from '../../assets/images/main/img_d3chart.png';
 
 let modalTarget = '';
 const commingSoon = () => {
@@ -34,6 +35,14 @@ export default function PortfolioFrontDev() {
   };
 
   const motionList = [
+    {
+      mainTitle: 'D3Chart',
+      keyword: '#D3js',
+      subTitle: 'D3js를 활용, 입력받은 데이터로 그래프를 그려보자.',
+      pageURL: '/khs/project/chart/chart.html',
+      linkType: 'blank',
+      imageURL: img_d3chart,
+    },
     {
       mainTitle: 'HSBOT',
       keyword: '#TensorFlowjs',

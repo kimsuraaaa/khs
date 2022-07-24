@@ -11,7 +11,7 @@ export default function MBTIStart(props) {
 
   useEffect(() => {
     document.querySelector('.mbti-col').classList.add('active');
-    hsPackage.minHeightFull('.mbti-col');
+    // hsPackage.minHeightFull('.mbti-col');
   }, []);
 
   return (
