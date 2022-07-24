@@ -1,21 +1,27 @@
 /*
-내가 임의로 정한 매개변수로 받으려는 객체 구조. 지속 업데이트 예정.
+barChart를 그려주는 함수입니다.
+d3.js 기반으로 svg로 차트를 그립니다. 
+매개변수로, tagName 과 chartData를 가집니다.
+querySelector(tagName) 요소에 해당 차트를 그립니다.
+chartData를 통해, 차트의 세부 정보를 적용합니다.
 {
-	meta: { barWidth: ${Number}, boxHeight: ${Number}, hoverAction: ${Boolean}, unit: {String}, radius: ${Number} },
+	meta: { barWidth: ${Number}, boxHeight: ${Number}, detailView: true, unit: {String}, radius: ${Number} },
 	data: [
 		{ name: ${String}, value: ${Number}, color: ${String ColorCode} },
 		...
 	],
 }
 */
-function chartBar(chartData) {
+function chartBar(tagName, chartData) {
+  const chartBox = document.querySelector(tagName);
   const data = chartData.data; // chart 상세 Data
   const width = chartData.meta.boxWidth; // 차트 영역의 가로값.
   const height = chartData.meta.boxHeight; // 차트 영역의 세로값.
   const chartRadius = chartData.meta.radius; // 차트 모서리 radius.
-  const hoverAction = chartData.meta.hoverAction; // hover Action 여부.
   const chartUnit = chartData.meta.unit; // 차트 단위.
   const margin = { top: 40, left: 40, bottom: 40, right: 40 }; // margin 값을 객체로 지정해둔다.
+  const detailView = chartData.meta.detailView;
+  chartBox.innerHTML = '';
 
   let dataValues = data.map((item) => {
     return Number(item.value);
@@ -48,13 +54,36 @@ function chartBar(chartData) {
       .call((g) => g.select('.domain').remove())
       .call((g) => g.selectAll('line').attr('x2', width).style('stroke', '#f5f5f5'));
 
-  document.getElementById('svgChartBar').innerHTML = '<div id="tooltip">0</div>';
+  // svg 변수에 tagName 선택자에, svg 타입으로 추가하고, 그래프의 크기 width, height만큼 지정한다.
+  const svg = d3
+    .select(tagName)
+    .append('svg')
+    .style('width', width)
+    .style('height', height)
+    .style('max-width', '100%')
+    .style('max-height', '100%')
+    .attr('viewBox', '0 0 ' + width + ' ' + height);
 
-  // svg 변수에 어떤 #svgChartBar 선택자에, svg 타입으로 추가하고, 그래프의 크기 width, height만큼 지정한다.
-  const svg = d3.select('#svgChartBar').append('svg').style('width', width).style('height', height);
+  svg.append('g').call(xAxis); // x축
+  svg.append('g').call(yAxis); // y축
 
-  svg.append('g').call(xAxis);
-  svg.append('g').call(yAxis);
+  if (detailView) {
+    // unit 표기
+    svg
+      .append('g') // g태그 추가.
+      .selectAll('rect')
+      .data(data)
+      .enter()
+      .append('text') // g > text 추가.
+      .text((d) => d.value + chartUnit) // text에 value 값 입력.
+      .attr('x', (d) => x(d.name))
+      .attr('y', (d) => y(d.value))
+      .attr('dy', '-12')
+      .style('font-weight', 'normal')
+      .style('font-size', '2.8rem')
+      .attr('alignment-baseline', 'middle');
+  }
+  // chart item
   svg
     .append('g')
     .selectAll('rect')
@@ -74,27 +103,63 @@ function chartBar(chartData) {
     .attr('fill', (d) => d.color); // 차트 막대 bg.
 
   svg.node();
+}
 
-  const rectEl = document.getElementsByTagName('rect');
-  const tooltop = document.getElementById('tooltip');
+function chartPie(tagName) {
+  const chartBox = document.querySelector(tagName);
+  const svgDimensions = {
+    width: 300,
+    height: 300,
+  };
+  const radius = Math.min(svgDimensions.width, svgDimensions.height) / 2;
+  const data = [420, 80, 130, 210, 510, 80];
 
-  if (hoverAction) {
-    for (const el of rectEl) {
-      el.addEventListener('mouseover', (event) => {
-        const target = event.target;
-        const positionLeft =
-          Number(target.getAttribute('x')) + Number(x.bandwidth() / 2) - tooltop.clientWidth / 2;
-        const positionTop =
-          height - margin.top - target.getAttribute('height') - tooltop.clientHeight - 5;
-        const color = target.dataset.color;
-        const value = target.dataset.y;
+  const svg = d3
+    .select(tagName)
+    .append('svg')
+    .attr('width', svgDimensions.width)
+    .attr('height', svgDimensions.height)
+    .style('border', '1px solid rgba(0,0,0,0.1)');
 
-        tooltop.innerText = value + chartUnit;
-        tooltop.style.background = color;
-        tooltop.style.top = positionTop + 'px';
-        tooltop.style.left = positionLeft + 'px';
-        tooltop.style.opacity = 1;
-      });
-    }
+  const g = svg
+    .append('g')
+    .attr('transform', `translate(${svgDimensions.width / 2}, ${svgDimensions.height / 2})`);
+  const color = d3.scaleOrdinal(['#ff9800', '#ffa726', '#ffb74d', '#ffcc80', '#ffe0b2', '#fff3e0']);
+
+  const pie = d3.pie();
+  const arc = d3.arc().innerRadius(0).outerRadius(radius);
+  const arcs = g
+    .selectAll('arc')
+    .data(pie(data))
+    .enter()
+    .append('g')
+    .attr('class', 'arc')
+    .on('mouseover', onMouseOver)
+    .on('mouseout', onMouseOut);
+
+  arcs
+    .append('path')
+    .attr('fill', (d, i) => color(i))
+    .attr('d', arc);
+
+  arcs
+    .append('text')
+    .attr('transform', (d) => `translate(${arc.centroid(d)})`)
+    .text((d) => d.value)
+    .attr('font-family', 'sans-serif')
+    .attr('font-size', '18px')
+    .attr('font-weight', 'bold')
+    .attr('fill', '#fff')
+    .attr('text-anchor', 'middle')
+    .attr('display', 'none');
+
+  function onMouseOut(d, i) {
+    d3.select(this).select('path').transition().duration(200).style('fill', color(i));
+    d3.select(this).select('text').attr('display', 'none');
+  }
+
+  function onMouseOver(d, i) {
+    d3.select(this).select('path').transition().duration(200).style('fill', '#e65100');
+    d3.select(this).select('text').attr('display', 'block');
   }
 }

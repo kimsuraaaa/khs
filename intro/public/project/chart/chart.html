@@ -19,6 +19,7 @@
       <!-- // header -->
       <!-- chart body -->
       <section>
+        <h1 id="chartName">bar chart</h1>
         <div class="setting-box">
           <div class="setting-list">
             <h2>차트설정</h2>
@@ -80,10 +81,18 @@
         </div>
         <button type="button" class="btn-chart-set" onclick="barChartSet();">차트그리기</button>
         <button type="button" class="btn-chart-set" onclick="autoSet();">샘플그리기</button>
+        <div class="chart-area">
+          <div class="chart-box" id="svgChartBar"></div>
+        </div>
       </section>
       <section>
-        <h1 id="chartName">bar chart</h1>
-        <div class="chart-box" id="svgChartBar"></div>
+        <h1 id="chartName">pie chart</h1>
+        <button type="button" class="btn-chart-set btn-orange" onclick="chartPie('#svgChartPie');">
+          파이차트그리기
+        </button>
+        <div class="chart-area">
+          <div class="chart-box" id="svgChartPie"></div>
+        </div>
       </section>
       <!-- // chart body -->
       <!-- footer -->
@@ -96,11 +105,12 @@
       <!-- // footer-->
       <script>
         let chartData = {
-          meta: { boxWidth: 600, boxHeight: 400, hoverAction: true, unit: '개', radius: 5 },
+          meta: { boxWidth: 600, boxHeight: 400, detailView: true, unit: '개', radius: 5 },
           data: [],
         };
 
         function barChartSet() {
+          // chart bar random color
           const randomColor = ['#5487b1', '#63a1af', '#7ab8aa', '#93caa8', '#add7a8', '#c6e3a7'];
           const barChartWidth = document.getElementById('barChartWidth').value;
           const barChartHeight = document.getElementById('barChartHeight').value;
@@ -111,9 +121,10 @@
 
           barChartWidth !== '' ? (chartData.meta.boxWidth = Number(barChartWidth)) : 600;
           barChartHeight !== '' ? (chartData.meta.boxHeight = Number(barChartHeight)) : 400;
-          chartData.meta.hoverAction = Number(barChartUnit);
+          chartData.meta.detailView = Number(barChartUnit);
           chartData.meta.unit = document.getElementById('barChartUnitText').value;
           chartData.meta.radius = Number(document.getElementById('chartBarRadius').value);
+          // 기존 data 삭제
           delete chartData.data;
           chartData.data = [];
           document.getElementsByName('chartDataName').forEach((item, idx) => {
@@ -127,7 +138,7 @@
             });
           });
 
-          chartBar(chartData);
+          chartBar('#svgChartBar', chartData);
         }
 
         let dataLength = 1;
