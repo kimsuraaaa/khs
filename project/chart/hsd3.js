@@ -105,15 +105,23 @@ function chartBar(tagName, chartData) {
   svg.node();
 }
 
+/*
+  pie chart를 그려줍니다.
+  tagName 을 매개변수로 갖습니다.
+  
+*/
 function chartPie(tagName) {
   const chartBox = document.querySelector(tagName);
+  // chart의 width, height 값을 선언.
   const svgDimensions = {
     width: 300,
     height: 300,
   };
+  // width, height 값의 절반만큼 radius 값을 지정하여, pie 모양을 만든다.
   const radius = Math.min(svgDimensions.width, svgDimensions.height) / 2;
+  // pie chart에 입력할 값들을 적용한다.
   const data = [420, 80, 130, 210, 510, 80];
-
+  // svg 변수에 chart 적용.
   const svg = d3
     .select(tagName)
     .append('svg')

@@ -104,11 +104,14 @@
       </footer>
       <!-- // footer-->
       <script>
+        // chartData 의 기본 배열 생성, dataLength 값 1로 시작.
+        let dataLength = 1;
         let chartData = {
           meta: { boxWidth: 600, boxHeight: 400, detailView: true, unit: '개', radius: 5 },
           data: [],
         };
 
+        // 막대차트를 그려주는 함수. 그래프의 background 색상이 없다면, randomColor 중 한개의 색상으로 표기됨.
         function barChartSet() {
           // chart bar random color
           const randomColor = ['#5487b1', '#63a1af', '#7ab8aa', '#93caa8', '#add7a8', '#c6e3a7'];
@@ -141,7 +144,7 @@
           chartBar('#svgChartBar', chartData);
         }
 
-        let dataLength = 1;
+        // 입력된 옵션으로, 차트를 그려줍니다.
         function chartDataAdd() {
           let inputData = [];
           document.getElementsByName('chartDataName').forEach((item, idx) => {
@@ -171,6 +174,7 @@
           });
         }
 
+        // 샘플 차트 데이터를 입력하고, 차트를 그려줍니다.
         function autoSet() {
           document.getElementById('chartDataPlus').innerHTML =
             '<h2>\n' +
